@@ -49,13 +49,12 @@ def nice_print(datacenter):
     print('Datacenter:', datacenter.name)
     for cluster in datacenter.clusters:
         print('\tCluster Name: ', cluster.name)
-        print('\t\tSecurity Level: ', cluster.security_level)
+        print(2*'\t' + 'Security Level: ', cluster.security_level)
         for network in cluster.networks:
-            print('\t\tNetwork: ', network.ipv4_network)
-            print('\t\t\tIP Addressess:')
+            print(2*'\t' + 'Network:', network.ipv4_network)
+            print(3*'\t' + 'IP Addressess:')
             for ip_addresses in network.entries:
-                print("\t\t\t\t", str(ip_addresses.address) + ', available: ' + str(
-                    ip_addresses.available) + ", last_used: " + ip_addresses.last_used)
+                print(4*"\t", '{}, available: {}, last user: {}'.format(ip_addresses.address, ip_addresses.available, ip_addresses.last_used))
 
 if __name__ == '__main__':
     main()
