@@ -54,7 +54,7 @@ def nice_print(datacenter):
             print(2*'\t' + 'Network:', network.ipv4_network)
             print(3*'\t' + 'IP Addressess:')
             for ip_addresses in network.entries:
-                print(4*"\t", '{}, available: {}, last user: {}'.format(ip_addresses.address, ip_addresses.available, ip_addresses.last_used))
+                print(4*"\t", '{}, available: {}, last used: {}'.format(ip_addresses.address, ip_addresses.available, ip_addresses.last_used))
 
 if __name__ == '__main__':
     main()
